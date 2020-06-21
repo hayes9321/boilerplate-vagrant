@@ -12,7 +12,5 @@ sudo service php7.1-fpm stop
 sudo service php7.2-fpm stop
 sudo service php7.3-fpm start
 
-sudo cp -f /vagrant_data/.env /var/www/html/knect
-sudo cp -f /vagrant_data/app.php /var/www/html/knect/config
-
-#cd /var/www/html/knect && composer update
+sudo cp -f /vagrant_data/.env /var/www/html
+sudo cp -f /vagrant_data/app.php /var/www/html/config

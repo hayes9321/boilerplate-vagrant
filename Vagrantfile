@@ -15,7 +15,7 @@ bash("key_file=~/.ssh/id_rsa; [[ -z $(ssh-add -L | grep $key_file) ]] && ssh-add
 Vagrant.configure(2) do |config|
   config.vm.box = "laravel/homestead"
   config.vm.box_url = ""
-  config.vm.hostname = "" #Fill this is for client Ex. VM-KNECT-CLIENT-01
+  config.vm.hostname = "" #Fill this is for client Ex. VM-APP-CLIENT-01
   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 443, host: 443
   config.vm.network "public_network",
@@ -23,7 +23,7 @@ Vagrant.configure(2) do |config|
   use_dhcp_assigned_default_route: true
 
   config.vm.synced_folder "./data", "/vagrant_data"
-  config.vm.synced_folder "./src", "/var/www/html/knect"
+  config.vm.synced_folder "./src", "/var/www/html"
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
